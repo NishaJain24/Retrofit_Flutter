@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.pink,
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -42,7 +43,7 @@ class _HomeState extends State<Home> {
         title: Text("Retrofit Implementation - Flutter"),
       ),
       body: pressed ? _buildBody(context):Center(
-        child: RaisedButton(child: Text("Fetch Users",style: TextStyle(color: Colors.white,fontSize: 18),),color: Colors.green,
+        child: RaisedButton(child: Text("Fetch Users",style: TextStyle(color: Colors.white,fontSize: 18),),color: Colors.pink,
             onPressed: () => {setState(() {
               pressed = true;
 
@@ -87,7 +88,7 @@ Widget _buildPosts(BuildContext context, ResponseData posts) {
       return Card(
         child: ListTile(
 
-          leading: Icon(Icons.account_box,color: Colors.green,size: 50,),
+          leading: Icon(Icons.person_pin,color: Colors.pink,size: 50,),
           title: Text(posts.data[index]['name'],style: TextStyle(fontSize: 20),),
           subtitle: Text(posts.data[index]['email']),
         ),
